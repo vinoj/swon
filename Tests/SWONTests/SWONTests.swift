@@ -17,10 +17,19 @@ struct SWONTests {
     @Test(arguments: ["populated", "minimal", "partial"])
     func populated(filename: String) throws {
         let json = try json(named: filename)
-        let parsed = try ComplexStruct(fromJSON: json)
-        print(parsed)
-        let jsonData = try #require(json.data(using: .utf8))
-        let foundationParsed = try JSONDecoder().decode(ComplexStruct.self, from: jsonData)
+        let parsed = try ComplexStruct.withSWON(json)
+        let foundationParsed = try ComplexStruct.withFoundation(json)
         #expect(parsed == foundationParsed)
+    }
+}
+
+private extension ComplexStruct {
+    static func withSWON(_ json: String) throws -> Self {
+        try ComplexStruct(fromJSON: json)
+    }
+
+    static func withFoundation(_ json: String) throws -> Self {
+        let jsonData = try #require(json.data(using: .utf8))
+        return try JSONDecoder().decode(ComplexStruct.self, from: jsonData)
     }
 }
