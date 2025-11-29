@@ -28,7 +28,7 @@ This project is licensed under the [MIT][license-content].
 
 Twitter: [@keeshux][about-twitter]
 
-Website: [davidederosa.com][web-home]
+Website: [davidederosa.com][web-home], with my blog series on [cross-platform Swift][web-cps].
 
 [license-content]: LICENSE
 [swift-macros]: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/
