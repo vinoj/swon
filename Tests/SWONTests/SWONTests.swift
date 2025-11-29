@@ -7,23 +7,23 @@ import Foundation
 import Testing
 
 struct SWONTests {
-    private func json(named name: String) throws -> String {
-        guard let url = Bundle.module.url(forResource: name, withExtension: "json") else {
-            fatalError()
-        }
-        return try String(contentsOf: url, encoding: .utf8)
-    }
-
     @Test(arguments: ["populated", "minimal", "partial"])
     func populated(filename: String) throws {
-        let json = try json(named: filename)
+        let json = try jsonString(fromFileNamed: filename)
         let parsed = try ComplexStruct.withSWON(json)
         let foundationParsed = try ComplexStruct.withFoundation(json)
         #expect(parsed == foundationParsed)
     }
 }
 
-private extension ComplexStruct {
+func jsonString(fromFileNamed name: String) throws -> String {
+    guard let url = Bundle.module.url(forResource: name, withExtension: "json") else {
+        fatalError()
+    }
+    return try String(contentsOf: url, encoding: .utf8)
+}
+
+extension ComplexStruct {
     static func withSWON(_ json: String) throws -> Self {
         try ComplexStruct(fromJSON: json)
     }
