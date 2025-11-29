@@ -68,5 +68,27 @@
             "colorToStatus": {"green": "inactive"},
             "optionalColorArray": null
         }
+    },
+    "optionalStringToSubStructArray": {
+        "someList": [{
+            "favoriteColor": "green",
+            "optionalSize": 1,
+            "statusHistory": ["inactive", "pending"],
+            "colorToStatus": {"green": "inactive"},
+            "optionalColorArray": null
+        }, {
+            "favoriteColor": "red",
+            "optionalSize": 0,
+            "statusHistory": ["active"],
+            "colorToStatus": {"red": "active"},
+            "optionalColorArray": ["blue"]
+        }],
+        "otherList": [{
+            "favoriteColor": "blue",
+            "optionalSize": null,
+            "statusHistory": ["active", "pending"],
+            "colorToStatus": {"blue": "pending"},
+            "optionalColorArray": null
+        }]
     }
 }

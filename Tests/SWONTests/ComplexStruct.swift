@@ -49,6 +49,7 @@ struct ComplexStruct: Equatable, Codable {
 
     let stringToSubStruct: [String: SubStruct]
     let optionalStringToSubStruct: [String: SubStruct]?
+    let optionalStringToSubStructArray: [String: [SubStruct]]?
 }
 
 @SWON

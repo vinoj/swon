@@ -51,5 +51,14 @@
             "colorToStatus": {"red": "active"},
             "optionalColorArray": null
         }
+    },
+    "optionalStringToSubStructArray": {
+        "otherList": [{
+            "favoriteColor": "blue",
+            "optionalSize": null,
+            "statusHistory": ["active", "pending"],
+            "colorToStatus": {"blue": "pending"},
+            "optionalColorArray": null
+        }]
     }
 }
