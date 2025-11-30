@@ -15,7 +15,7 @@ import SWON
 
 @SWON
 enum Color {
-	case red, green blue
+	case red, green, blue
 }
 
 @SWON
